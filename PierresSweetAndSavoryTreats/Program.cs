@@ -15,7 +15,7 @@ namespace PierresSweetAndSavoryTreats
       builder.Services.AddControllersWithViews();
 
       builder.Services.AddDbContext<PierresSweetAndSavoryTreatsContext>(
-        dbContextOptions => dbContextOoptions
+        dbContextOptions => dbContextOptions
         .UseMySql(
           builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"])
         )
@@ -48,7 +48,7 @@ namespace PierresSweetAndSavoryTreats
       app.UseAuthorization();
 
       app.MapControllerRoute(
-        nameof: "default",
+        name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}"
       );
 
