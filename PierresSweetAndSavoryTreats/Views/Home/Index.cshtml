@@ -8,4 +8,38 @@
   <h1>Welcome to Pierres Sweet and Savory Treats</h1>
   <hr>
   <br>
+  <h3>Treats</h3>
+  @if (@Model["Treats"].Length == 0)
+  {
+    <h5 class="text-info">No Sweet and Savory Treats have been added yet!</h5>
+  }
+  else
+  {
+    <ul>
+      @foreach (Treat treat in Model["Treats"])
+      {
+        <li>@Html.ActionLink($"{treat.TreatName}", "Details", "Treats", new { id = @treat.TreatId})</li>
+      }
+    </ul>
+  }
+
+  <h3>Flavors</h3>
+  @if (Model["Flavors"].Length == 0)
+  {
+    <h5 class="text-info">No Sweet and Savory Flavors have been added yet!</h5>
+  }
+  else
+  {
+    <ul>
+      @foreach (Flavor flavor in Model["Flavors"])
+      {
+        <li>@Html.ActionLink(@flavor.FlavorName, "Details", "Flavors", new { id = @flavor.FlavorId})</li>
+      }
+    </ul>
+  }
+  <hr>
+  <br>
+  <p>@Html.ActionLink("Manage Treats", "Index", "Treats")</p>
+  <p>@Html.ActionLink("Manage Flavors", "Index", "Flavors")</p>
+  <p>@Html.ActionLink("Create or Manage An Account", "Index", "Account")</p>
 </div>
