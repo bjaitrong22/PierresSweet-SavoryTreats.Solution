@@ -1,0 +1,38 @@
+@{
+  Layout="_Layout";
+}
+
+@using PierresSweetAndSavoryTreats.ViewModels
+
+@model RegisterViewModel
+
+<div class="container">
+  <h2>Register as a new user</h2>
+  <hr />
+  <br>
+
+  @if(!ViewData.ModelState.IsValid)
+  {
+    @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:")
+  }
+
+  @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+  {
+    @Html.LabelFor(user => user.Name,"Name: ")
+    @Html.TextBoxFor(user => user.Name)
+
+    @Html.LabelFor(user => user.Email, "Email: ")
+    @Html.TextBoxFor(user => user.Email)
+
+    @Html.LabelFor(user => user.Password, "Password: ")
+    @Html.TextBoxFor(user => user.Password)
+
+    @Html.LabelFor(user => user.ConfirmPassword, "Confirm Password: ")
+    @Html.TextBoxFor(user => user.ConfirmPassword)
+
+    <input type="submit" value="Register" class="btn btn-success" />
+  }
+  <hr />
+  <br>
+  <p>@Html.ActionLink("Back To Account Page", "Index")</p>
+</div>
