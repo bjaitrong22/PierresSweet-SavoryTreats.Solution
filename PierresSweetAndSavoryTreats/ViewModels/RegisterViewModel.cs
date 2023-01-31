@@ -6,12 +6,12 @@ namespace PierresSweetAndSavoryTreats.ViewModels
   {
     
     [Required]
-    [Display(Name = "Name")]
-    public string Name{ get; set; }
+    [Display(Name = " Full Name")]
+    public string FullName{ get; set; }
 
     [Required]
     [EmailAddress]
-    [Display(Name = "Email Address")]
+    //[Display(Name = "Email Address")]
     public string Email { get; set; }
 
     [Required]
