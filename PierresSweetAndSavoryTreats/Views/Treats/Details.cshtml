@@ -18,14 +18,14 @@
   {
     <p>There are currently no Flavors listed yet for this Treat! </p>
   }
-  else
+  else 
   {
     <h4>Flavors for this Treat</h4>
     <ul>
       @foreach(FlavorTreat join in Model.JoinEntities)
       {
         <li>@join.Flavor.FlavorName</li>
-        @using (Html.BeginForm("DeleteJoin", "Treat"))
+        @using (Html.BeginForm("DeleteJoin", "Treats"))
         {
           @Html.Hidden("joinId", @join.FlavorTreatId)
           {

@@ -52,7 +52,7 @@ namespace PierresSweetAndSavoryTreats
         pattern: "{controller=Home}/{action=Index}/{id?}"
       );
 
-      app.Run();
+      app.Run(); 
     }
   }
 }
