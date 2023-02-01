@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresSweetAndSavoryTreats.Models.Treat
+
+<div class="container">
+  <h2>Delete</h2>
+  <hr />
+  <br>
+
+  <h3>Are you sure you want to delete this?</h3>
+
+  @Html.DisplayFor( m => m.TreatName)
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Delete" class="btn btn-danger" />
+  }
+  <hr />
+  <br>
+  <p>@Html.ActionLink("Manage Treats", "Index")</p>
+</div>
