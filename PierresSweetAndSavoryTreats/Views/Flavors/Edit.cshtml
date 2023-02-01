@@ -1,0 +1,36 @@
+@{
+  Layout="_Layout";
+}
+
+@model PierresSweetAndSavoryTreats.Models.Flavor
+
+<div class="container">
+  <h2>Edit</h2>
+  <hr />
+  <br>
+  
+  <h4>Edit this Flavor: @Html.DisplayFor(m => m.FlavorName)?</h4>
+  <p>@Html.ValidationMessageFor(m => m.FlavorName,"", new {@class = "text-danger", @style = "font-weight:600"})</p>
+  <p>@Html.ValidationMessageFor(m => m.Ingredients,"", new {@class = "text-danger", @style = "font-weight:600"})</p>
+  <p>@Html.ValidationMessageFor(m => m.Description,"", new {@class = "text-danger", @style = "font-weight:600"})</p>
+
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(m => m.FlavorId)
+
+    @Html.LabelFor(m => m.FlavorName, "Flavor Name: ")
+    @Html.EditorFor(m => m.FlavorName)
+
+    @Html.LabelFor(m => m.Ingredients, "Ingredients: ")
+    @Html.EditorFor(m => m.Ingredients)
+
+    @Html.LabelFor(m => m.Description, "Description: ")
+    @Html.EditorFor(m => m.Description)
+
+    <input type="submit" value="Save" class="btn btn-primary" />
+
+  }
+  <hr />
+  <br>
+  <p>@Html.ActionLink("Manage Flavors", "Index")</p>
+</div>
