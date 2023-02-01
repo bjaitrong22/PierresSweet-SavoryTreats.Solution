@@ -29,6 +29,34 @@ namespace PierresSweetAndSavoryTreats.Controllers
       return View(treats);
     }
 
+    [Authorize]
+    public ActionResult Create()
+    {
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatName");
+      return View();
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> Create(Treat treat, int TreatId)
+    {
+      if(!ModelState.IsValid)
+      {
+        ViewBag.CatalogId = new SelectList(_db.Treats,"TreatId", "TreatName");
+
+        return View(treat);
+      }
+      else
+      {
+        string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
+        treat.User = currentUser;
+        _db.Treats.Add(treat);
+        _db.SaveChanges();
+
+        return RedirectToAction("Index");
+      }
+    }
+
   }
 
 }

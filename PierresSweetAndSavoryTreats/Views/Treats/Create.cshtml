@@ -1,0 +1,32 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresSweetAndSavoryTreats.Models.Treat
+
+<div class="container">
+  <h4>Add A New Sweet and Savory Treat</h4>
+  <hr />
+  <br>
+
+  <p>@Html.ValidationMessageFor(m => m.TreatName,"", new { @class = "text-danger", @style = "font-weight: 600"})</p>
+  <p>@Html.ValidationMessageFor(m => m.Ingredients,"", new {@class ="text-danger", @style = "font-weight: 600"})</p>
+  <p>@Html.ValidationMessageFor(m => m.Description,"", new { @class = "text-danger", @style = "font-weight: 600"})</p>
+
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(m => m.TreatName, "Treat Name: ")
+    @Html.TextBoxFor(m => m.TreatName)
+
+    @Html.LabelFor(m => m.Ingredients, "Ingredients: ")
+    @Html.TextBoxFor(m => m.Ingredients)
+
+    @Html.LabelFor(m => m.Description, "Description: ")
+    @Html.TextBoxFor(m => m.Description)
+
+    <input type="submit" value="Add new Treat" class="btn btn-primary" />
+  }
+  <hr />
+  <br>
+  <p>@Html.ActionLink("Manage Treats", "Index")</p>
+</div>
