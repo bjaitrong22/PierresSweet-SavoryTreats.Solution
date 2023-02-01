@@ -79,9 +79,9 @@ You can use an identifier other than origin. Copy the URL from your GitHub proje
 
     git remote -v
 
-## Step 4. Pushing .gitignore file from the clone Factory.Solution
+## Step 4. Pushing .gitignore file from the clone PierresSweetAndSavoryTreats.Solution
     
-• Before pushing any changes to your remote repository, navigate to top level/root of the Factory.Solution directory in your command line and run the following commands:  
+• Before pushing any changes to your remote repository, navigate to top level/root of the PierresSweetAndSavoryTreats.Solution directory in your command line and run the following commands:  
 
     git add .gitignore 
     git commit -m "Add .gitignore file."
@@ -101,7 +101,7 @@ You can use an identifier other than origin. Copy the URL from your GitHub proje
 
     {
         "ConnectionStrings": {
-            "DefaultConnection": "Server=localhost;Port=3306;database=factory;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
+            "DefaultConnection": "Server=localhost;Port=3306;database=PierresSweetAndSavoryTreats;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
         }
     }
 
