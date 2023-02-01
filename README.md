@@ -73,7 +73,7 @@ Nothing should show up. That means the remote has been removed. If it hasn't bee
 
     git remote add origin [your-project-url-here]. 
       
-You can use an identifier other than origin. Copy the URL from your GitHub project repository by clicking the green CODE drop down menu on your GitHub repository and put it at the end of the command above. Which you should already have from step 1.
+You can use an identifier other than origin. Copy the URL from your GitHub project repository by clicking the green CODE drop down menu on your GitHub repository and put it at the end of the command above. Which you should already have from step 2.
       
 • You can confirm that the new remote is correctly linked by running the command: 
 
