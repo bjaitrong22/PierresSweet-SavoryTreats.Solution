@@ -17,6 +17,7 @@ By Bai Jaitrong
   * SQL
   * MySQL Workbench
   * Entity Framework Core
+  * Microsoft Identity
   
 ## Step 1. Installing MySQL Server and MySQl Workbench:
 
